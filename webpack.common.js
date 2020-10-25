@@ -73,10 +73,6 @@ module.exports = {
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
     }),
-    new FaviconsWebpackPlugin({
-      logo: path.resolve(__dirname, 'src/public/images/Foodhalla-logo.png'),
-      inject: true,
-    }),
     new WorkboxPlugin.GenerateSW({
       clientsClaim: true,
       skipWaiting: true,
@@ -99,7 +95,6 @@ module.exports = {
       description: 'Find your favorite restaurant should not be this hard',
       background_color: '#4AE3B5',
       theme_color: '#4AE3B5',
-      'theme-color': '#4AE3B5',
       start_url: '/',
       crossorigin: 'use-credentials',
       icons: [
@@ -117,6 +112,16 @@ module.exports = {
           purpose: 'any maskable ',
         },
       ],
+    }),
+    new FaviconsWebpackPlugin({
+      logo: path.resolve(__dirname, 'src/public/images/Foodhalla-logo.png'),
+      favicons: {
+        theme_color: '#4AE3B5',
+        icons: {
+          coast: false,
+          yandex: false,
+        },
+      },
     }),
     new CopyWebpackPlugin({
       patterns: [
