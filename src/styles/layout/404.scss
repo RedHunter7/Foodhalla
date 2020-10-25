@@ -1,0 +1,61 @@
+.page-not-found {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: fit-content;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    .not-found {
+        margin: auto;
+        text-align: center;
+        background: var(--secondary-color);
+        font-family: getFont(merriweather);
+        font-weight: bold;
+        color: var(--primary-color);
+        border-radius: 50px;
+        @include mobile  {
+            width: 80%;
+            padding: 10px 0;
+            font-size: 64px;
+        }
+        @include tablet-dekstop {
+            width: fit-content;
+            font-size: 110px;
+            padding: 20px 20vw;
+        }
+    }
+    .message {
+        text-align: center;
+        color: var(--accent-color);
+        font-family: getFont(merriweather);
+        font-weight: bold;
+        @include mobile {
+            margin: 30px 0;
+            font-size: 28px;
+        }
+        @include tablet-dekstop {
+            margin: 50px 0;
+            font-size: 48px;
+        }
+    }
+    a {
+        border-radius: 15px;
+        background: var(--tertiary-color);
+        color: #0F0A3C;
+        font-size: 24px;
+        font-family: getFont(merriweather);
+        font-weight: bold;
+        box-shadow: 0px 4px 4px 0px #000000 25%;
+        &:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+        }
+        @include mobile {
+            padding: 20px;
+        }
+        @include tablet-dekstop {
+            padding: 20px 40px;
+        }
+    }
+}

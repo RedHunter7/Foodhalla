@@ -1,0 +1,92 @@
+.resto-description, .resto-menu , .resto-reviews{
+    width: 80%;
+    color: var(--secondary-color);
+    margin: 40px 10%;
+    .food, .drink {
+        margin: 50px 0;
+    }
+    ul {
+        margin: 18px 0;
+        list-style-type: square;
+        list-style-position: inside;
+    }
+    ul > li {
+        margin: 10px 0;
+    }
+    h3 {
+        font-family: getFont(merriweather);
+        font-size: 20px;
+        text-align: center;
+        font-weight: bold;
+    }
+    p, ul >li {
+        color: var(--accent-color);
+        font-family: getFont(roboto);
+        font-size: 18px;
+        font-weight: 500;
+    }
+    @include tablet-dekstop {
+        margin: 40px 5%;
+        border: 2px solid var(--accent-color);
+        border-radius: 20px;
+        padding: 40px 5%;
+        &.resto-menu {
+            width: 540px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            justify-content: space-around;
+        }
+        &.resto-menu > .food, &.resto-menu > .drink {
+            margin: 0;
+        }
+        h3 {
+            font-size: 24px;
+        }
+        p, ul > li {
+            font-size: 20px;
+        }
+    }
+}
+
+.resto-reviews {
+    @include tablet-dekstop {
+        border: none;
+    }
+    .review {
+        color: var(--accent-color);
+        margin: 20px;
+        width: 90%;
+        height: fit-content;
+        padding: 20px 5%;
+        border: 2px solid var(--accent-color);
+        text-align: center;
+        border-radius: 15px;
+        @include tablet-dekstop {
+            width: 320px;
+            padding: 20px;
+        }
+    }
+    .consumer-review {
+        margin: 20px 0;
+        @include tablet-dekstop {
+            margin: 40px 0;
+        }
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .review > h4 {
+        font-family: getFont(roboto);
+        font-weight: 400;
+        margin: 10px 0;
+        @include tablet-dekstop {
+            font-size: 20px;
+        }
+    }
+
+    .review > h3:nth-child(3) {
+        font-weight: 300;
+        font-family: getFont(roboto);
+    }
+}

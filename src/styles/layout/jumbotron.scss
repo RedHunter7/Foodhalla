@@ -1,0 +1,161 @@
+.jumbotron {
+    background: var(--primary-dark-color);
+    margin-top: 75px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    @include dekstop {
+        margin-top: 60px;
+        padding: 50px 0;
+    }
+
+    .resto-cover {
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        @include tablet {
+            margin: 40px 0;
+        }
+        @include dekstop {
+            margin: 0;
+        }
+    }
+
+    .resto-info {
+        position: absolute;
+        left: 10%;
+        bottom: 10%;
+        display: block;
+        color: #eeeeee;
+        h1 {
+            font-family: getFont(merriweather);
+        }
+        h3,h4,h5 {
+            font-family: getFont(roboto);
+            font-weight: 500;
+        }
+        h4,h5 {
+            margin: 5px 0;
+        }
+        h3 {
+            display: flex;
+            align-items: center;
+        }
+        i {
+            font-size: 20px;
+            margin-left: 5px;
+        }
+        @include tablet {
+            bottom: 20%;
+            h1 {
+                font-size: 36px;
+                margin-bottom: 5px;
+            }
+            h3 {
+                font-size: 24px;
+            }
+            h4{
+                font-size: 20px;
+            }
+            h5 {
+                font-size: 18px;
+            }
+            i {
+                font-size: 20px;
+            }
+        }
+        @include tablet {
+            bottom: 10%;
+            h1 {
+                font-size: 48px;
+                margin-bottom: 5px;
+            }
+            h3 {
+                font-size: 32px;
+            }
+            h4{
+                font-size: 24px;
+            }
+            h5 {
+                font-size: 20px;
+            }
+            i {
+                font-size: 24px;
+            }
+        }
+        @include dekstop {
+            left: 5%;
+            bottom: 10%;
+            h1 {
+                font-size: 54px;
+                margin-bottom: 5px;
+            }
+            h3 {
+                font-size: 32px;
+            }
+            h4{
+                font-size: 32px;
+            }
+            h5 {
+                font-size: 24px;
+            }
+            i {
+                font-size: 32px;
+            }
+        }
+    }
+    
+    img, .jumbotron-background {
+        width: 100%;
+        height: 66.66vw;
+        filter: brightness(50%);
+    }
+
+    .jumbotron-background {
+        background: url("../public/images/heros/small-hero-image_2.webp") center;
+        background-size: cover;
+        @include tablet {
+            background: url("../public/images/heros/medium-hero-image_2.webp") center;
+            background-size: cover;
+        }
+        @include dekstop {
+            background: url("../public/images/heros/large-hero-image_2.webp") center;
+            background-size: cover;
+            height: 500px;
+        }
+    }
+
+    img {
+        filter: brightness(40%);
+        @include tablet {
+            width: 540px;
+            height: 360px;
+            border-radius: 20px;
+        }
+        @include dekstop {
+            width: 900px;
+            height: 480px;
+            border-radius: 20px;
+        }
+    }
+
+    .copywriter{
+        font-size: 28px;
+        font-family: getFont(merriweather);
+        color: #eeeeee;
+        text-align: center;
+        position: absolute;
+        width: 90%;
+        top: 50%;
+        left: 50%;
+        transform:translate(-50%,-50%);
+        @include tablet {
+            font-size: 48px;
+        }
+        @include dekstop {
+            width: 90%;
+            max-width: 900px;
+            font-size: 56px;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+<div class="jumbotron">
+    <div class="resto-cover" id="resto-cover">
+    </div>
+</div>
+
+<div class="resto-description">
+    <h3>Description</h3>
+    <p></p>
+</div>
+
+<div class="resto-menu">
+    <div class="food">
+        <h3>Food</h3>
+        <ul></ul>
+    </div>
+    <div class="drink">
+        <h3>Drink</h3>
+        <ul></ul>
+    </div>
+</div>
+
+<div class="resto-reviews">
+    <h3>Consumer Review</h3>
+    <div class="consumer-review" id="consumer-review"></div>
+</div>
+
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h2>Give Your Review</h2>
+        <button class="close-btn" id="close-modal"><i class="material-icons">close</i></button>
+        <form method="post" action="javascript:void(0)" id="review-form">
+            <div class="input-group">
+                <label for="input-name">Name</label>
+                <input type="text" name="name" id="input-name" placeholder="John Doe">
+            </div>
+            <div class="input-group">
+                <label for="input-review">Review</label>
+                <textarea name="review" id="input-review" cols="30" rows="10" placeholder="Write Your Review Here ...."></textarea>
+            </div>
+            <div class="input-group">
+                <button type="submit" aria-label="Click this button to send your review" id="send-btn">Send Review</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<button class="review-btn" id="modal-trigger"><i class="material-icons">edit</i></button>

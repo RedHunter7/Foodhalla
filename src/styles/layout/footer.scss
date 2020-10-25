@@ -1,0 +1,17 @@
+footer{
+    color: var(--secondary-color);
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    background: transparent;
+    border: 2px solid;
+    border-color: var(--secondary-color);
+    font-size: 16px;
+    font-family: getFont(merriweather);
+    font-weight: bold;
+    text-align: center;
+    padding: 20px 0;
+    @include tablet {
+        font-size: 20px;
+    }
+}

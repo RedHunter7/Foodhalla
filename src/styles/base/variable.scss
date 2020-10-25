@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+// List of Colors
+
+[data-theme="light"] {
+    --primary-color: #EEEEEE;
+    --primary-dark-color: #d5d5d5;
+    --primary-light-color: #f4f4f4;
+    --secondary-color: #171332;
+    --tertiary-color: #4AE3B5;
+    --danger-color: #d72323;
+    --accent-color: #000000;
+}
+
+[data-theme="dark"] {
+    --primary-color: #171332;
+    --primary-dark-color: #221c49;
+    --primary-light-color: #120f28; 
+    --secondary-color:#EEEEEE;
+    --tertiary-color: #4AE3B5;
+    --danger-color: #d72323;
+    --accent-color: #f4f4f4;
+} 
+
+// List of fonts
+$fonts: (
+    merriweather: #{'Merriweather' serif},
+    roboto: #{'Roboto' sans-serif}
+);
+
+@function getFont($font-name) {
+    @return map-get($fonts, $font-name);
+};
+
+// List of nav propert
+$nav-part: (
+    nav-height: 45px,
+    nav-logo-font: getFont(merriweather),
+    nav-logo-size: 30px,
+    nav-link-font: getFont(roboto),
+    nav-link-size: 24px
+);
+
+@function getNav($nav-property) {
+    @return map-get($nav-part, $nav-property)
+};

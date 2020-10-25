@@ -1,0 +1,33 @@
+.error {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    h1{
+        text-align: center;
+        color: var(--secondary-color);
+        font-family: getFont(roboto);
+        font-weight: bold;
+        @include mobile {
+            font-size: 28px;
+        }
+    }
+    .svg-wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin: 30px 0;
+    }
+    .error-icon {
+        width: 200px;
+        height: 200px;
+        @include mobile {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    .error-icon circle, .error-icon line{
+        stroke: var(--secondary-color);
+    }
+    
+}

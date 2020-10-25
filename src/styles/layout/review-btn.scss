@@ -1,0 +1,23 @@
+.review-btn {
+    position: fixed;
+    right: 5%;
+    bottom: 10%;
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    background: var(--tertiary-color);
+    color: #171332;
+    box-shadow: 0 4px 4px 0 #000000 25%;
+    @include dekstop {
+        &:hover {
+            background: var(--secondary-color);
+            i {
+                color: var(--tertiary-color);
+            }
+        }
+    }
+    i {
+        line-height: 32px;
+        font-size: 32px;
+    }
+}

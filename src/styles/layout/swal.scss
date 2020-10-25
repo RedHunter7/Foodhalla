@@ -1,0 +1,58 @@
+.swal-overlay {
+    background-color: rgba($color:#0da574, $alpha: 0.4);
+}
+
+.swal-modal {
+    background-color: var(--primary-color);
+    border-radius: 20px;
+}
+
+.swal-text, .swal-title {
+    font-family: getFont(roboto);
+    font-weight: 500;
+    color: var(--accent-color);
+    @include tablet-dekstop {
+        font-size: 18px;
+    }
+}
+
+.swal-button {
+    font-family: getFont(roboto);
+    font-weight: bold;
+    @include tablet-dekstop {
+        font-size: 18px;
+    }
+}
+
+.swal-button--confirm {
+    background-color: var(--tertiary-color);
+    color: #000000;
+    &:focus {
+        outline: 2px dashed var(--accent-color);
+    }
+}
+
+.swal-button--danger {
+    background-color: var(--danger-color);
+    color: #f6f6f6;
+    &:focus {
+        outline: 2px dashed var(--accent-color);
+    }
+}
+
+.swal-button--cancel {
+    border: 2px solid var(--secondary-color);
+    background-color: transparent;
+    color: var(--accent-color);
+    &:not([disabled]):hover, &:hover {
+       background-color: var(--secondary-color);
+       color: var(--primary-color);
+    }
+    &:focus {
+        outline: 2px dashed var(--accent-color);
+    }
+}
+
+.swal-icon--success::after, .swal-icon--success__hide-corners, .swal-icon--success::before {
+    background: transparent;
+}

@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import "./base/variable.scss";
+@import "./base/responsive.scss";
+@import "./base/normalize.scss";
+
+@import "./layout/nav.scss";
+@import "./layout/review-btn.scss";
+@import "./layout/modal.scss";
+@import "./layout/resto-detail.scss";
+@import "./layout/sidenav.scss";
+@import "./layout/jumbotron.scss";
+@import "./layout/container.scss";
+@import "./layout//swal.scss";
+@import "./layout/loader.scss";
+@import "./layout//404.scss";
+@import "./layout//error.scss";
+@import "./layout/footer.scss";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    background: var(--primary-color);
+}
+
+html.transition,html.transition *,html.transition *:before,html.transition *:after {
+    transition: all 750ms;
+    transition-delay: 0;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow : inset 0 0 6px rgba(0,0,0,0.3); 
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+}
+
+.skip-link {
+    font-family: getFont(roboto);
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    top: -40px;
+    left: 80px;
+    background-color: var(--tertiary-color);
+    color: #171332;
+    padding: 12px;
+    z-index: 997;
+ }
+  
+ .skip-link:focus {
+    top: 15%;
+ }

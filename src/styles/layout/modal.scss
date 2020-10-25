@@ -1,0 +1,172 @@
+.modal {
+    visibility: hidden;
+    background: rgba($color:#0da574, $alpha: 0.4);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    .modal-content {
+        position: relative;
+        background: var(--primary-color);
+        @include mobile {
+            border-radius: 20px;
+            padding: 30px 20px;
+            width: 280px;
+        }
+        @include tablet {
+            border-radius: 40px;
+            padding: 60px 30px;
+            width: 400px;
+        }
+        @include dekstop {
+            border-radius: 40px;
+            padding: 60px 30px;
+            width: 480px;
+        }
+        padding-bottom: 0;
+        height: fit-content;
+        overflow: auto;
+    }
+
+    .close-btn {
+        background: #ff304f;
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        width: fit-content;
+        height: fit-content;
+        padding: 10px;
+        i {
+            color: #f6f6f6;
+            font-size: 36px;
+        }
+        &:hover{
+            border: none;
+            background: var(--tertiary-color);
+            i {
+                color:  #ff304f;
+            }
+        }
+        @include mobile {
+            background: transparent;
+            top: 0;
+            right: 0;
+            i {
+                color: #ff304f;
+            }
+        }
+    }
+    .input-group {
+        text-align: center;
+        margin-bottom: 30px;
+        display: grid;
+        justify-content: center;
+        label {
+            font-weight: getFont(roboto);
+            font-weight: 700;
+            justify-self: start;
+            margin-bottom: 15px;
+            margin-left: 20px;
+            color: var(--accent-color);
+            @include mobile {
+                font-size: 18px;
+            }
+            @include tablet-dekstop {
+                font-size: 20px;
+            }
+        }
+        &:nth-last-child(1) {
+            @include tablet-dekstop {
+                margin-top: 30px;
+                margin-bottom: 0;
+            }
+        }
+    }
+    h2 {
+        text-align: center;
+        color: var(--accent-color);
+        margin-bottom: 30px;
+    }
+    input {
+        background: var(--primary-dark-color);
+        color: var(--accent-color);
+        border-radius: 20px;
+        font-family: getFont(roboto);
+        @include mobile {
+            padding: 0 20px;
+            font-size: 18px;
+            width: 210px;
+            height: 50px;
+        }
+        @include tablet-dekstop {
+            padding: 0 30px;
+            height: 50px;
+            width: 290px;
+            font-size: 20px;
+        }
+        &:focus {
+            border: 2px solid var(--accent-color);
+        }
+    }
+    textarea{
+        background: var(--primary-dark-color);
+        color: var(--accent-color);
+        border-radius: 20px;
+        resize: none;
+        font-family: getFont(roboto);
+        @include mobile {
+            font-size: 18px;
+            padding: 10px 20px;
+            width: 210px;
+            height: 130px;
+        }
+        @include tablet-dekstop {
+            font-size: 20px;
+            padding: 20px 30px;
+            width: 290px;
+            height: 110px;
+        }
+        &:focus {
+            border: 2px solid var(--accent-color);
+        }
+    }
+    button{
+        color: #000000;
+        font-family: getFont(roboto);
+        font-weight: bold;
+        font-size: 24px;
+        border-radius: 15px;
+        background: var(--tertiary-color);
+        width: fit-content;
+        height: fit-content;
+        padding: 20px;
+        margin: auto;
+        box-shadow: 0px 4px 4px 0px #000000 25%;
+        &:hover{
+            border: 2px solid var(--accent-color);
+        }
+    }
+}
+
+@keyframes openModal {
+    from{
+        transform: scale(0,0);
+    }
+    to {
+        transform: scale(100%,100%);
+    }
+}
+
+@keyframes closeModal {
+    from {
+        transform: scale(100%,100%);
+    }
+    to {
+        transform: scale(0,0);
+    }
+}

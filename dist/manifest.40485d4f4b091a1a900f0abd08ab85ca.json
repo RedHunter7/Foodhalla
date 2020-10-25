@@ -1,0 +1,115 @@
+{
+  "icons": [
+    {
+      "src": "icons/android/icon_512x512.8fcfb2e36acb85d7e14b32136507df3a.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable "
+    },
+    {
+      "src": "icons/android/icon_192x192.8332e247cb2ea265dd50b856a3e98a4c.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable "
+    },
+    {
+      "src": "icons/android/icon_144x144.76ee4d839def72b53589ed4b35f553e6.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable "
+    },
+    {
+      "src": "icons/android/icon_96x96.e723c327f3fef1fa51ae17337aa408fb.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable "
+    },
+    {
+      "src": "icons/android/icon_72x72.4bff4dc67426de0d4a2d0a81d83a4f85.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable "
+    },
+    {
+      "src": "icons/android/icon_48x48.8cb080d50e5ef934c5751dfc507badf8.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any maskable "
+    },
+    {
+      "src": "icons/android/icon_36x36.ae1bb2a26d6e1128e09ca9514089c16f.png",
+      "sizes": "36x36",
+      "type": "image/png",
+      "purpose": "any maskable "
+    },
+    {
+      "src": "icons/ios/icon_180x180.a99f43c0fe227986e8f0b859d6b66c45.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/ios/icon_167x167.02c70979f932948d4e19d09ffa3ddbdb.png",
+      "sizes": "167x167",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/ios/icon_152x152.aacc1ee06c585cb702ef9487cf4ab743.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/ios/icon_144x144.76ee4d839def72b53589ed4b35f553e6.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/ios/icon_120x120.17f959f6dc330e105df291a85e466416.png",
+      "sizes": "120x120",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/ios/icon_114x114.540e3286a5e76a1c6196cd67629f1c6d.png",
+      "sizes": "114x114",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/ios/icon_76x76.b10e36b71190c51e5bb90dd7b99ae783.png",
+      "sizes": "76x76",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/ios/icon_72x72.4bff4dc67426de0d4a2d0a81d83a4f85.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/ios/icon_60x60.666119029090888b43e8eb6c49f77201.png",
+      "sizes": "60x60",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/ios/icon_57x57.81395e9abd72407d33d2541a6ac46fa1.png",
+      "sizes": "57x57",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "name": "Foodhalla",
+  "short_name": "FH",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "/",
+  "description": "Find your favorite restaurant should not be this hard",
+  "background_color": "#4AE3B5",
+  "theme_color": "#4AE3B5",
+  "theme-color": "#4AE3B5"
+}
