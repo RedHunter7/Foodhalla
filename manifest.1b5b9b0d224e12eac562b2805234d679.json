@@ -110,6 +110,5 @@
   "start_url": "/",
   "description": "Find your favorite restaurant should not be this hard",
   "background_color": "#4AE3B5",
-  "theme_color": "#4AE3B5",
-  "theme-color": "#4AE3B5"
+  "theme_color": "#4AE3B5"
 }
