@@ -59,6 +59,24 @@ const renderData = () => {
     const restoDetailLink = document.querySelectorAll('.restaurant-list a');
     restoDetailLink.forEach((elm) => {
       elm.addEventListener('click', (event) => {
+        const nav = document.querySelector('nav');
+        nav.innerHTML = `
+          <div class="nav-wrapper">
+            <a class="back-btn material-icons" href="#home" id="back-btn" 
+              href="javascript:void(0)">arrow_back</a>
+            <a class="logo resto-name" href="javascript:void(0)">
+              loading...
+            </a>
+            <div id="action"></div>
+          </div>
+        `;
+
+        const backBtn = document.getElementById('back-btn');
+        backBtn.addEventListener('click', () => {
+          loader();
+          loadPage('home');
+        });
+
         loader();
         const page = event.target.getAttribute('href').substr(1);
         loadPage(page);
