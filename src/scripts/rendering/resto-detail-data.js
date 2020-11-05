@@ -159,7 +159,7 @@ const renderRestoDetail = (restoId) => {
     });
 
     const consumerReviews = document.getElementById('consumer-review');
-    result['restaurant']['consumerReviews'].forEach((elm) => {
+    result['restaurant']['customerReviews'].forEach((elm) => {
       consumerReviews.innerHTML += `
     <div class="review">
         <h3>${elm['name']}</h3>
@@ -180,7 +180,7 @@ const renderRestoDetail = (restoId) => {
       description: result['restaurant']['description'],
       food: result['restaurant']['menus']['foods'],
       drink: result['restaurant']['menus']['drinks'],
-      reviews: result['restaurant']['consumerReviews'],
+      reviews: result['restaurant']['customerReviews'],
     };
     restoDetail(restoData);
   };
