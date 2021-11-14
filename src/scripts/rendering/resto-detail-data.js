@@ -81,7 +81,7 @@ const renderRestoDetail = (restoId) => {
   };
 
   const fetchData = () => {
-    fetch(`https://dicoding-restaurant-api.el.r.appspot.com/detail/${restoId}`)
+    fetch(`https://restaurant-api.dicoding.dev/detail/${restoId}`)
         .then((response) => {
           return response.json();
         })
