@@ -2,7 +2,7 @@ import loadPage from '../rendering/load-page.js';
 import loader from '../component/loader.js';
 
 const renderData = () => {
-  fetch('https://dicoding-restaurant-api.el.r.appspot.com/list')
+  fetch('https://restaurant-api.dicoding.dev/list')
       .then((response) => {
         return response.json();
       })
