@@ -127,7 +127,7 @@ const restoDetail = (restoData = 0) => {
     } else if (navigator.onLine === false) {
       swal(`Error`, `Can't submit review on offline mode`, 'error');
     } else {
-      fetch('https://dicoding-restaurant-api.el.r.appspot.com/review', {
+      fetch('https://restaurant-api.dicoding.dev/review', {
         method: 'POST',
         headers: {
           'X-Auth-Token': 12345,
