@@ -130,7 +130,7 @@ const renderRestoDetail = (restoId) => {
 
     const restoCover = document.getElementById('resto-cover');
     restoCover.innerHTML = `
-    <img src="img/placeholder-image-1.png" data-src="https://dicoding-restaurant-api.el.r.appspot.com/images/large/${result['restaurant']['pictureId']}"
+    <img src="img/placeholder-image-1.png" data-src="https://restaurant-api.dicoding.dev/images/large/${result['restaurant']['pictureId']}"
     class="lazyload" alt="resto cover">
     <div class="resto-info">
         <h1>${result['restaurant']['name']}</h1>
@@ -172,7 +172,7 @@ const renderRestoDetail = (restoId) => {
     const restoData = {
       id: restoId,
       title: result['restaurant']['name'],
-      picture: `https://dicoding-restaurant-api.el.r.appspot.com/images/large/${result['restaurant']['pictureId']}`,
+      picture: `https://restaurant-api.dicoding.dev/images/large/${result['restaurant']['pictureId']}`,
       city: result['restaurant']['city'],
       rating: result['restaurant']['rating'],
       address: result['restaurant']['address'],
