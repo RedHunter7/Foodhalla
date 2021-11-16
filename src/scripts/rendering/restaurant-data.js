@@ -31,7 +31,7 @@ const renderData = () => {
       restoList += `
                 <div class="restaurant">
                    <figure>
-                       <img src="img/placeholder-image-2.png" data-src="https://dicoding-restaurant-api.el.r.appspot.com/images/small/${elm['pictureId']}" class="lazyload" alt="${elm['name']}">
+                       <img src="img/placeholder-image-2.png" data-src="https://restaurant-api.dicoding.dev/images/small/${elm['pictureId']}" class="lazyload" alt="${elm['name']}">
                    </figure>
                    <div class="restaurant-detail">
                        <main>

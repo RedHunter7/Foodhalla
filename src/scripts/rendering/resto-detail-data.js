@@ -87,7 +87,7 @@ const renderRestoDetail = (restoId) => {
         })
         .then((result) => {
           console.log(result);
-          renderRestoDetail(result);
+          renderRestoDetailData(result);
         })
         .catch((error) => {
           console.log(error);
@@ -122,7 +122,7 @@ const renderRestoDetail = (restoId) => {
         });
   };
 
-  const renderRestoDetail = (result) => {
+  const renderRestoDetailData = (result) => {
     let categories = '';
     result['restaurant']['categories'].forEach((elm) => {
       categories += `#${elm['name']} `;

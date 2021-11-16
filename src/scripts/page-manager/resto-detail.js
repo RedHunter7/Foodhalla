@@ -130,7 +130,6 @@ const restoDetail = (restoData = 0) => {
       fetch('https://restaurant-api.dicoding.dev/review', {
         method: 'POST',
         headers: {
-          'X-Auth-Token': 12345,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
