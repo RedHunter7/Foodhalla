@@ -1,7 +1,7 @@
 {
-  "name": "restaurant-apps",
-  "short_name": "restaurant-apps",
-  "description": "",
+  "name": "foodhalla",
+  "short_name": "foodhalla",
+  "description": "Catalog Web Restaurant",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
