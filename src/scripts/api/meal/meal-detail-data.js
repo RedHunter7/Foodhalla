@@ -1,69 +1,84 @@
 import mealDetail from '../../page-manager/meal-detail';
 import loadPage from '../../rendering/load-page';
-import {getMealData} from '../../idb/meal-favor-db';
+import { getMealData } from '../../idb/meal-favor-db';
 
 const renderMealDetail = (mealId) => {
-    getMealData(mealId).then((result) => {
-        if (
-          // eslint-disable-next-line max-len
-          ((result === undefined || result !== undefined) && navigator.onLine === true) ||
-          (result === undefined && navigator.onLine === false)
-        ) {
-          fetchData();
-        } else {
-          getIDBMealData(result);
-        }
-      });
-    
-      const getIDBMealData = (result) => {
-        let img;
-    
-        if (navigator.onLine === false) {
-          img = 'img/placeholder-image-1.png';
-        } else {
-          img = result['picture'];
-        }
-    
-        const mealCover = document.getElementById('meal-cover');
-        mealCover.innerHTML = `
+  getMealData(mealId).then((result) => {
+    if (
+      // eslint-disable-next-line max-len
+      ((result === undefined || result !== undefined) && navigator.onLine === true) ||
+      (result === undefined && navigator.onLine === false)
+    ) {
+      fetchData();
+    } else {
+      getIDBMealData(result);
+    }
+  });
+
+  const getIDBMealData = (result) => {
+    let img;
+
+    if (navigator.onLine === false) {
+      img = 'img/placeholder-image-1.png';
+    } else {
+      img = result['picture'];
+    }
+
+    const mealCover = document.getElementById('meal-cover');
+    mealCover.innerHTML = `
             <img src="${img}"
             alt="meal cover">
             <div class="meal-info">
-                <h1>${result['title']}</h1>
+                <h2>${result['title']}</h1>
                 <h3>
                 ${result['area']}
                 </h3>
                 <h5>${result['tags']}</h5>
             </div>
         `;
-    
-        const mealData = {
-            id: data['idMeal'],
-            title: data['strMeal'],
-            picture: data['strMealThumb'],
-            area: data['strArea'],
-            tags: tagsText,
-            instruction: data['strInstruction'],
-            ingredient: ingredient,
-            measure: measure,
-        };
-        mealDetail(mealData);
-      };
+
+    const mealInstruction = document.querySelector('.meal-instruction ol');
+    result['instruction'].forEach((elm) => {
+      mealInstruction.innerHTML += `<li>${elm}</lim>`
+    });
+
+    const mealIngredient = document.querySelector('.meal-ingredient .ingredient ul');
+    result['ingredient'].forEach((elm, index) => {
+      mealIngredient.innerHTML += `<li>${elm}</li>`;
+    });
+
+    const mealMeasure = document.querySelector('.meal-ingredient .measure ul');
+    result['measure'].forEach((elm) => {
+      mealMeasure.innerHTML += `<li>${elm}</li>`;
+    });
+
+    const mealData = {
+      id: result['id'],
+      title: result['title'],
+      picture: result['picture'],
+      area: result['area'],
+      tags: result['tags'],
+      instruction: result['instruction'],
+      ingredient: result['ingredient'],
+      measure: result['measure'],
+    };
+    mealDetail(mealData);
+  };
 
   const fetchData = () => {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
-        .then((response) => {
-          return response.json();
-        })
-        .then((result) => {
-          console.log(result);
-          renderMealDetailData(result);
-        })
-        .catch((error) => {
-          console.log(error);
-          mealDetail();
-          const mainContent = document.getElementById('main-content');
-          mainContent.innerHTML = `
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        console.log(result);
+        renderMealDetailData(result);
+      })
+      .catch((error) => {
+        console.log(error);
+        mealDetail();
+        const mainContent = document.getElementById('main-content');
+        mainContent.innerHTML = `
       <div class="error">
         <div class="svg-wrapper">
             <svg class="error-icon" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -82,29 +97,28 @@ const renderMealDetail = (mealId) => {
         <h1>Ooops can't load page on offline mode</h1>
       </div>
       `;
-          const interval = setInterval(() => {
-            if (navigator.onLine === true) {
-              loadPage(`meal-detail-${mealId}`);
-              clearInterval(interval);
-            };
-          }, 1000);
-        });
+      });
   };
 
   const renderMealDetailData = (result) => {
     let data = result['meals'][0];
-    let tags = data['strTags'].split(',');
+
     let tagsText = '';
-    tags.forEach((elm) => {
-      tagsText += `#${elm} `;
-    });
+    if (data['strTags'] == null) {
+      tagsText = '';
+    } else {
+      let tags = data['strTags'].split(',');
+      tags.forEach((elm) => {
+        tagsText += `#${elm} `;
+      });
+    }
 
     const mealCover = document.getElementById('meal-cover');
     mealCover.innerHTML = `
     <img src="img/placeholder-image-1.png" data-src="${data['strMealThumb']}"
     class="lazyload" alt="meal cover">
     <div class="meal-info">
-        <h1>${data['strMeal']}</h1>
+        <h2>${data['strMeal']}</h1>
         <h3>
         ${data['strArea']} 
         </h3>
@@ -115,17 +129,17 @@ const renderMealDetail = (mealId) => {
     const measure = [];
 
     for (let index = 1; index <= 20; index++) {
-        if(data[`strIngredient${index.toString()}`] != "") {
-            ingredient.push(data[`strIngredient${index.toString()}`]);
-            measure.push(data[`strMeasure${index.toString()}`]);
-        }
+      if (data[`strIngredient${index.toString()}`] != "") {
+        ingredient.push(data[`strIngredient${index.toString()}`]);
+        measure.push(data[`strMeasure${index.toString()}`]);
+      }
     }
 
     const mealInstruction = document.querySelector('.meal-instruction ol');
     let instruction = data['strInstructions'].split('.');
     instruction.pop();
     instruction.forEach((elm) => {
-        mealInstruction.innerHTML += `<li>${elm}</lim>`
+      mealInstruction.innerHTML += `<li>${elm}</lim>`
     });
 
     const mealIngredient = document.querySelector('.meal-ingredient .ingredient ul');
@@ -137,18 +151,18 @@ const renderMealDetail = (mealId) => {
     measure.forEach((elm) => {
       mealMeasure.innerHTML += `<li>${elm}</li>`;
     });
-    
+
     const mealData = {
       id: data['idMeal'],
       title: data['strMeal'],
       picture: data['strMealThumb'],
       area: data['strArea'],
       tags: tagsText,
-      instruction: data['strInstruction'],
+      instruction: instruction,
       ingredient: ingredient,
       measure: measure,
     };
-    mealDetail(mealData); 
+    mealDetail(mealData);
   };
 };
 

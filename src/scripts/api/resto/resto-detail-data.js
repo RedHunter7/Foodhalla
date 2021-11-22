@@ -113,12 +113,6 @@ const renderRestoDetail = (restoId) => {
       </div>
       `;
 
-          const interval = setInterval(() => {
-            if (navigator.onLine === true) {
-              loadPage(`resto-detail-${restoId}`);
-              clearInterval(interval);
-            };
-          }, 1000);
         });
   };
 

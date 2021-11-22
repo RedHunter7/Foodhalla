@@ -14,7 +14,7 @@ const mealDetail = (mealData = 0) => {
   if (mealData !== 0) {
     const checkMealStatus = () => {
       getMealData(mealData['id']).then((result) => {
-        renderDetailTopNav(mealName);
+        renderDetailTopNav(mealName, 'meal-list');
 
         const action = document.getElementById('action');
         if (result === undefined) {

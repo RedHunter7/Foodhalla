@@ -50,7 +50,7 @@ const renderMealList = () => {
       const mealDetailLink = document.querySelectorAll('.meal-list a');
       mealDetailLink.forEach((elm) => {
         elm.addEventListener('click', (event) => {
-          renderDetailTopNav('loading..')
+          renderDetailTopNav('loading..', 'meal-list')
         });
       });
     };

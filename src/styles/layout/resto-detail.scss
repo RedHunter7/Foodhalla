@@ -25,6 +25,11 @@
         font-size: 18px;
         font-weight: 500;
     }
+    @include mobile {
+        p {
+            line-height: 30px;
+        }
+    }
     @include tablet-dekstop {
         margin: 40px 5%;
         border: 2px solid var(--accent-color);
@@ -45,6 +50,9 @@
         }
         p, ul > li {
             font-size: 20px;
+        }
+        p {
+            line-height: 40px;
         }
     }
 }
