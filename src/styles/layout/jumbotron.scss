@@ -9,7 +9,7 @@
         padding: 50px 0;
     }
 
-    .resto-cover {
+    .resto-cover, .meal-cover {
         position: relative;
         width: fit-content;
         height: fit-content;
@@ -21,7 +21,7 @@
         }
     }
 
-    .resto-info {
+    .resto-info, .meal-info {
         position: absolute;
         left: 10%;
         bottom: 10%;

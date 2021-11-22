@@ -81,6 +81,10 @@ module.exports = {
         handler: 'StaleWhileRevalidate',
       },
       {
+        urlPattern: new RegExp('https://www.themealdb.com'),
+        handler: 'StaleWhileRevalidate',
+      },
+      {
         urlPattern: new RegExp('https://fonts.googleapis.com'),
         handler: 'StaleWhileRevalidate',
       },
@@ -128,6 +132,14 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/templates/page/'),
           to: path.resolve(__dirname, 'dist/page/'),
+        },
+      ],
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/templates/topnav/'),
+          to: path.resolve(__dirname, 'dist/topnav/'),
         },
       ],
     }),

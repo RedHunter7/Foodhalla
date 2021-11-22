@@ -1,9 +1,9 @@
-import restoDetail from '../page-manager/resto-detail';
-import loadPage from '../rendering/load-page';
-import {getData} from '../idb/idb';
+import restoDetail from '../../page-manager/resto-detail';
+import loadPage from '../../rendering/load-page';
+import {getRestoData} from '../../idb/resto-favor-db';
 
 const renderRestoDetail = (restoId) => {
-  getData(restoId).then((result) => {
+  getRestoData(restoId).then((result) => {
     if (
       // eslint-disable-next-line max-len
       ((result === undefined || result !== undefined) && navigator.onLine === true) ||

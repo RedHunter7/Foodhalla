@@ -1,7 +1,7 @@
 import loadPage from '../rendering/load-page';
-import loader from '../component/loader';
 import swal from 'sweetalert';
-import {addData, updateData, getData, deleteData} from '../idb/idb';
+import renderDetailTopNav from "../rendering/load-detail-topnav";
+import {addRestoData, updateRestoData, getRestoData, deleteRestoData} from '../idb/resto-favor-db';
 
 const restoDetail = (restoData = 0) => {
   let restoName;
@@ -11,30 +11,10 @@ const restoDetail = (restoData = 0) => {
     restoName = restoData['title'];
   }
 
-  const renderNav = (navTitle) => {
-    const nav = document.querySelector('nav');
-    nav.innerHTML = `
-            <div class="nav-wrapper">
-                <a class="back-btn material-icons" href="#home" id="back-btn" 
-                href="javascript:void(0)">arrow_back</a>
-                <a class="logo resto-name" href="javascript:void(0)">
-                ${navTitle}
-                </a>
-                <div id="action"></div>
-            </div>
-      `;
-
-    const backBtn = document.getElementById('back-btn');
-    backBtn.addEventListener('click', () => {
-      loader();
-      loadPage('home');
-    });
-  };
-
   if (restoData !== 0) {
     const checkRestoStatus = () => {
-      getData(restoData['id']).then((result) => {
-        renderNav(restoName);
+      getRestoData(restoData['id']).then((result) => {
+        renderDetailTopNav(restoName);
 
         const action = document.getElementById('action');
         if (result === undefined) {
@@ -48,7 +28,7 @@ const restoDetail = (restoData = 0) => {
           const favorBtn = document.getElementById('favor');
           favorBtn.addEventListener('click', () => {
             if (navigator.onLine === true) {
-              addData(restoData);
+              addRestoData(restoData);
               restoDetail(restoData);
               // eslint-disable-next-line max-len
               swal('Good job!', `You save ${restoName} resto to favorite list`, 'success');
@@ -59,7 +39,7 @@ const restoDetail = (restoData = 0) => {
           });
         } else {
           if (navigator.onLine === true) {
-            updateData(restoData);
+            updateRestoData(restoData);
           }
           action.innerHTML = `
               <a class="delete-btn material-icons" id="delete"  
@@ -84,7 +64,7 @@ const restoDetail = (restoData = 0) => {
                     swal(`${restoName} has been removed from favorite list`, {
                       icon: 'success',
                     });
-                    deleteData(restoData['id']);
+                    deleteRestoData(restoData['id']);
                     checkRestoStatus();
                   }
                 });
@@ -94,7 +74,7 @@ const restoDetail = (restoData = 0) => {
     };
     checkRestoStatus();
   } else {
-    renderNav(restoName);
+    renderDetailTopNav(restoName);
   }
 
   const modalTrigger = document.getElementById('modal-trigger');

@@ -23,7 +23,7 @@
             margin-bottom: 30px;
         }
     }
-    .resto-loader {
+    .resto-loader, .meal-loader {
        width: 100%;
        height: fit-content;
        display: flex;
@@ -31,7 +31,7 @@
     }
 }
 
-.restaurant-list{
+.restaurant-list, .meal-list{
     @include tablet-dekstop {
         display: flex;
         justify-content: center;
@@ -51,167 +51,6 @@
         }
         @include dekstop {
             margin-top: 30vh;
-        }
-    }
-}
-
-.restaurant{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-color: var(--secondary-color);
-    @include mobile{
-        margin: auto;
-        padding: 0 15px;
-        height: 150px;
-        width: 95%;
-        border-bottom: 0.5px solid;
-        border-color: var(--secondary-color);
-        &:nth-child(1) {
-            border-top: 0.5px solid;
-            border-color: var(--secondary-color);
-        }
-    }
-    @include tablet {
-        background: var(--primary-light-color);
-        display: block;
-        border-radius: 20px;
-        width: 200px;
-        height: 280px;
-        border: 2px solid;
-        padding: 20px;
-        margin: 20px 30px;
-        border-color: var(--secondary-color);
-    }
-    @include dekstop {
-        background: var(--primary-light-color);
-        display: block;
-        border-radius: 20px;
-        width: 220px;
-        height: 300px;
-        border: 2px solid;
-        padding: 20px;
-        margin: 20px 20px;
-        border-color: var(--secondary-color);
-    }
-    figure{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        @include mobile {
-            margin-right: 20px;
-            height: 100%;
-        }
-        @include tablet {
-            margin: 0;
-            height: fit-content;
-        }
-        @include dekstop {
-            margin: 0;
-            height: fit-content;
-        }
-        img{
-            image-rendering: optimizeSpeed;
-            box-sizing: border-box;
-            border: 1px solid;
-            border-color: var(--secondary-color);
-            border-radius: 10px;
-            filter: brightness(90%);
-            @include mobile {
-                width: 90px;
-                height: 90px;
-            }
-            @include tablet {
-                width: 180px;
-                height: 120px;
-            }
-            @include dekstop {
-                width: 210px;
-                height: 140px;
-            }
-        }
-    }
-    .restaurant-detail {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        @include tablet {
-            text-align: center;
-        }
-        @include dekstop {
-            text-align: center;
-        }
-        .title{
-            @include mobile {
-                width: 150px;
-            }
-            @include tablet {
-                width: 180px;
-            }
-            @include dekstop {
-                width: 210px;
-            }
-            font-family: getFont(merriweather);
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            color: var(--secondary-color);
-            a {
-                color: var(--secondary-color);
-                padding: 12px;
-                transition: 0.3s;
-                @include mobile {
-                    padding-left: 0;
-                }
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-            @include tablet{
-                font-size: 20px;
-                margin-top: 20px;
-                margin-bottom: 10px;
-            }
-            @include dekstop {
-                font-size: 24px;
-                margin-top: 20px;
-                margin-bottom: 5px;
-            }
-        }
-        .rating,.description{
-            color: var(--accent-color);
-            text-align: left;
-            display: flex;
-            font-size: 14px;
-            font-weight: 300;
-            i {
-                line-height: 14px;
-                color: var(--secondary-color);
-                font-size: 18px;
-                @include tablet {
-                    line-height: 18px;
-                }
-                @include dekstop {
-                    line-height: 18px;
-                }
-            }
-            font-family: getFont(roboto);
-            @include mobile {
-                margin-bottom: 5px;
-            }
-            @include tablet {
-                justify-content: center;
-                font-size: 16px;
-                margin-bottom: 5px;
-            }
-            @include dekstop {
-                margin-bottom: 5px;
-                justify-content: center;
-                font-size: 16px;
-            }
         }
     }
 }

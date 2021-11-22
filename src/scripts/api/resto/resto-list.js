@@ -1,13 +1,12 @@
-import loadPage from '../rendering/load-page.js';
-import loader from '../component/loader.js';
+import renderDetailTopNav from "../../rendering/load-detail-topnav";
 
-const renderData = () => {
+const renderRestoList = () => {
   fetch('https://restaurant-api.dicoding.dev/list')
       .then((response) => {
         return response.json();
       })
       .then((result) => {
-        renderRestoList(result);
+        restoList(result);
       })
       .catch((err) => {
         const restaurantList = document.getElementById('restaurant-list');
@@ -18,14 +17,14 @@ const renderData = () => {
         `;
         const interval = setInterval(() => {
           if (navigator.onLine === true) {
-            renderData();
+            renderRestoList();
             clearInterval(interval);
           };
         }, 1000);
         console.log(err);
       });
 
-  const renderRestoList = (result) => {
+  const restoList = (result) => {
     let restoList = '';
     result['restaurants'].forEach((elm) => {
       restoList += `
@@ -59,30 +58,10 @@ const renderData = () => {
     const restoDetailLink = document.querySelectorAll('.restaurant-list a');
     restoDetailLink.forEach((elm) => {
       elm.addEventListener('click', (event) => {
-        const nav = document.querySelector('nav');
-        nav.innerHTML = `
-          <div class="nav-wrapper">
-            <a class="back-btn material-icons" href="#home" id="back-btn" 
-              href="javascript:void(0)">arrow_back</a>
-            <a class="logo resto-name" href="javascript:void(0)">
-              loading...
-            </a>
-            <div id="action"></div>
-          </div>
-        `;
-
-        const backBtn = document.getElementById('back-btn');
-        backBtn.addEventListener('click', () => {
-          loader();
-          loadPage('home');
-        });
-
-        loader();
-        const page = event.target.getAttribute('href').substr(1);
-        loadPage(page);
+        renderDetailTopNav('loading..');
       });
     });
   };
 };
 
-export default renderData;
+export default renderRestoList;

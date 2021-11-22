@@ -20,7 +20,7 @@ nav {
         font-family: getNav(nav-logo-font);
         font-size: getNav(nav-logo-size);
         font-weight: bold;
-        &.resto-name {
+        &.nav-title {
             width: 180px;
             height: 100%;
             text-align: left;
@@ -126,7 +126,6 @@ nav {
     transition: 0.3s all;
     margin-top: 50px;
     position: absolute;
-    left: 65%;
     transform: translate(-50%,0);
     display: block;
     width: fit-content;
@@ -159,4 +158,12 @@ nav {
     li > .active > .active-icons {
         display: initial;
     }
+}
+
+#favor-dropdown {
+    left: 50%;
+}
+
+#theme-dropdown {
+    left: 70%;
 }

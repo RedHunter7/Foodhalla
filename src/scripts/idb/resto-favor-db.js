@@ -9,24 +9,24 @@ const dbPromise = openDB(DATABASE_NAME, 1, {
   },
 });
 
-const addData = async (restoData) => {
+const addRestoData = async (restoData) => {
   return (await dbPromise).add(OBJECT_STORE_NAME, restoData);
 };
 
-const updateData = async (restoData) => {
+const updateRestoData = async (restoData) => {
   return (await dbPromise).put(OBJECT_STORE_NAME, restoData);
 };
 
-const getData = async (restoId) => {
+const getRestoData = async (restoId) => {
   return (await dbPromise).get(OBJECT_STORE_NAME, restoId);
 };
 
-const getAllData = async () => {
+const getAllRestoData = async () => {
   return (await dbPromise).getAll(OBJECT_STORE_NAME);
 };
 
-const deleteData = async (restoId) => {
+const deleteRestoData = async (restoId) => {
   return (await dbPromise).delete(OBJECT_STORE_NAME, restoId);
 };
 
-export {addData, updateData, getData, getAllData, deleteData};
+export {addRestoData, updateRestoData, getRestoData, getAllRestoData, deleteRestoData};

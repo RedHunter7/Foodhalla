@@ -4,7 +4,7 @@ import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import '../styles/main.scss';
 import loadPage from './rendering/load-page.js';
-import setAutoMode from './component/auto-mode.js';
+import setAutoMode from './utility/auto-mode.js';
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
   if (page === '') page = 'home';
   loadPage(page);
 });
+window.addEventListener('hashchange', () => {
+  let page = window.location.hash.substring(1);
+  if (page === '') page = 'home';
+  loadPage(page);
+})
 const checkStorage = localStorage.getItem('data-theme');
 
 if (typeof(Storage) !== undefined) {

@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-import {addData, getData, getAllData, deleteData} from '../src/scripts/idb/idb';
+import {addRestoData, getRestoData, getAllRestoData, deleteRestoData} from '../src/scripts/idb/resto-favor-db';
 import restoData from './restoData';
 import renderBtn from './renderButton';
 
@@ -23,10 +23,10 @@ describe('Add Resto to favorite list', () => {
   it('should be able to add resto on favorite list', () => {
     const favorBtn = document.getElementById('favor');
     favorBtn.addEventListener('click', () => {
-      addData(restoData).then(() => {
-        const resto = getData('rqdv5juczeskfw1e867');
+      addRestoData(restoData).then(() => {
+        const resto = getRestoData('rqdv5juczeskfw1e867');
         expect(resto).toEqual(restoData);
-        deleteData('rqdv5juczeskfw1e867');
+        deleteRestoData('rqdv5juczeskfw1e867');
       });
     });
     favorBtn.dispatchEvent(new Event('click'));
@@ -35,13 +35,13 @@ describe('Add Resto to favorite list', () => {
   it('Should not add the resto when its already added', () => {
     const favorBtn = document.getElementById('favor');
     favorBtn.addEventListener('click', () => {
-      addData(restoData).then(() => {
-        const allRestoData = getAllData();
+      addRestoData(restoData).then(() => {
+        const allRestoData = getAllRestoData();
         expect(allRestoData).toEqual(restoData);
-        deleteData('rqdv5juczeskfw1e867');
+        deleteRestoData('rqdv5juczeskfw1e867');
       });
     });
-    addData(restoData).then(() => {
+    addRestoData(restoData).then(() => {
       favorBtn.dispatchEvent(new Event('click'));
     });
   });
@@ -49,8 +49,8 @@ describe('Add Resto to favorite list', () => {
   it('Should not add Resto when it has no ID', () => {
     const favorBtn = document.getElementById('favor');
     favorBtn.addEventListener('click', () => {
-      addData({}).then(() => {
-        const allRestoData = getAllData();
+      addRestoData({}).then(() => {
+        const allRestoData = getAllRestoData();
         expect(allRestoData).toEqual({});
       });
     });

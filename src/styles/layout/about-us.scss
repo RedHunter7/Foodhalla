@@ -1,0 +1,82 @@
+.about-us {
+    display: grid;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 90%;
+    height: fit-content;
+    transform: translate(-50%,-50%);
+    .logo {
+        grid-area: logo;
+        .logo-content {
+            margin: 0 auto;
+            height: 200px;
+            width: 200px;
+            line-height: 200px;
+            text-align: center;
+            background: var(--secondary-color);
+            font-family: getFont(merriweather);
+            font-weight: bold;
+            color: var(--primary-color);
+            border-radius: 30px;
+            padding: 0;
+            @include mobile  {
+                height: 150px;
+                width: 150px;
+                line-height: 150px;
+                //padding: 20px;
+                font-size: 100px;
+            }
+            @include tablet-dekstop {
+                font-size: 160px;
+                //padding: 40px;
+            }
+        }
+    }
+    .title {
+        grid-area: title;
+        font-family: getFont(merriweather);
+        font-weight: bold;
+        color: var(--accent-color);
+        @include mobile  {
+            text-align: center;
+            font-size: 28px;
+        }
+        @include tablet {
+            text-align: center;
+        }
+        @include tablet-dekstop {
+            font-size: 48px;
+        }
+    }
+    .message {
+        grid-area: message;
+        color: var(--accent-color);
+        font-family: getFont(roboto);
+        font-weight: 500;
+        @include mobile  {
+            font-size: 20px;
+        }
+        @include tablet-dekstop {
+            line-height: 40px;
+            font-size: 28px;
+        }
+    }
+    @include dekstop {
+        grid-template-areas: 'title title title logo logo'
+                            'message message message logo logo';
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    @include tablet {
+        grid-gap: 40px;
+        grid-template-areas: 'title'
+                                'logo'
+                                'message';
+    }
+    @include mobile {
+        grid-gap: 30px;
+        grid-template-areas: 'title'
+                                'logo'
+                                'message';
+    }
+}
