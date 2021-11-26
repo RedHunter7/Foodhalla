@@ -71,7 +71,6 @@ const renderMealDetail = (mealId) => {
         return response.json();
       })
       .then((result) => {
-        console.log(result);
         renderMealDetailData(result);
       })
       .catch((error) => {

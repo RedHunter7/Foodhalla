@@ -6,6 +6,7 @@ import renderRestoList from '../api/resto/resto-list';
 import renderMealList from '../api/meal/meal-list.js';
 import renderMealDetail from '../api/meal/meal-detail-data.js';
 import mealFavorList from '../page-manager/meal-favor-list';
+import botNav from '../utility/botnav.js';
 
 const loadPage = (page) => {
   let restoId, mealId;
@@ -39,25 +40,39 @@ const loadPage = (page) => {
       .then((result) => {
         const mainContent = document.getElementById('main-content');
         mainContent.innerHTML = result;
+
+        const botNavElement = document.getElementById('bot-nav');
+
         if (page === 'home') {
+          botNavElement.style.bottom = 0;
+          botNav(0)
           renderHomeTopNav();
           renderRestoList();
         } else if (page === 'resto-detail') {
+          botNavElement.style.bottom = "-200%";
           renderRestoDetail(restoId);
         } else if (page === 'meal-list') {
+          botNavElement.style.bottom = 0;
+          botNav(1);
           renderHomeTopNav();
           renderMealList();
         } else if (page === 'meal-detail') {
+          botNavElement.style.bottom = "-200%";
           renderMealDetail(mealId);
         } else if (page === 'resto-favor-list') {
+          botNavElement.style.bottom = "-200%";
           renderDetailTopNav('Your Favorite Resto');
           restoFavorList();
         } else if (page === 'meal-favor-list') {
+          botNavElement.style.bottom = "-200%";
           renderDetailTopNav('Your Favorite Meal');
           mealFavorList();
         } else if (page === 'about-us') {
+          botNavElement.style.bottom = 0;
+          botNav(2);
           renderHomeTopNav();
         } else {
+          botNavElement.style.bottom = "-200%";
           renderHomeTopNav();
           home();
           const goHomeBtn = document.querySelector('.page-not-found a');

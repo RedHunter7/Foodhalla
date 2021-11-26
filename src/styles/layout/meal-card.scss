@@ -83,8 +83,11 @@
         }
         .title{
             @include mobile {
+                font-size: 16px;
+                line-height: 25px;
                 white-space: normal;
-                width: 200px;
+                width: 100%;
+                overflow: visible;
             }
             @include tablet {
                 width: 190px;

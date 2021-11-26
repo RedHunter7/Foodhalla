@@ -7,6 +7,9 @@ nav {
     z-index: 998;
     background: var(--primary-color);
     box-shadow: 0 5px 4px rgba(0, 0, 0, 0.25);
+    @include mobile {
+        padding: 3px 5%;
+    }
     .nav-wrapper{
         position: relative;
         height: 100%;
@@ -23,11 +26,16 @@ nav {
         &.nav-title {
             width: 180px;
             height: 100%;
-            text-align: left;
+            text-align: center;
             font-size: 30px;
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
+            @include mobile {
+                text-align: center;
+                width: 60vw;
+                font-size: 18px;
+            }
             @include tablet {
                 font-size: 36px;
                 width: 400px
@@ -37,6 +45,9 @@ nav {
                 width: fit-content;
                 left: 50%;
             }
+        }
+        @include mobile {
+            font-size: 24px;
         }
         @include dekstop {
             left: 7.5%;
@@ -50,6 +61,10 @@ nav {
         position: absolute;
         transform: translate(-50%);
         font-size: 48px;
+        @include mobile {
+            transform: translate(-50%, 20%);
+            font-size: 36px;
+        }
     }
 
     .sidenav-trigger {
