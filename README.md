@@ -2,7 +2,7 @@
 
 Restaurant Catalog website
 
-https://foodhalla.netlify.app/#home
+[Website](https://foodhalla.netlify.app/#home) | [Figma](https://www.figma.com/file/XGVWT97ce0jVRQ0LXuLxdD/FoodHalla?node-id=0%3A1&t=TeShY2R1N8b4F8gW-1e)
 
 ## Preview
 
